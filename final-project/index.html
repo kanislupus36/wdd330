@@ -4,18 +4,55 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intitial-scale=1.0">
         <title></title>
-        <meta name="description" content="">
+        <meta name="description" content="Explore Utah's national parks and get details such as weather and others.">
         <meta name="author" content="">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="css/style.css">
+        
     </head>
     <body>
         <header>
-            <h1>Magic The Gathering</h1>
+            <h1>Utah National Parks Weather</h1>
         </header>
+        
         <main>
-            <p>This is a site about Magic the Gathering and will help you with all your questions about cards.</p>
+            <section id="park-info">
+                <h2>Explore Parks</h2>
+                <input type="text" id="search-bar" placeholder="Search parks..." oninput="searchParks(event.target.value)">
+                <div id="park-list">
+                    <!-- Dynamically generated park list -->
+                </div>
+            </section>
+
+            <section id="park-details">
+                <h3>Park Details</h3>
+                <div id="weather-info">
+                    <!-- Park details will be shown here when "More Info" is clicked -->
+                </div>
+            </section>            
+        
+            <section id="weather-info">
+                <h2>Weather Forecast</h2>
+                <div id="weather-display">
+                    <!-- Weather info from API will be shown here -->
+                </div>
+                <br>
+                <div id="forecast-display">
+                    <!-- 5-day weather forecast -->
+                </div>
+            </section>
+        
+            <section id="favorites">
+                <h2>Your Favorite Parks</h2>
+                <div id="favorites-list">
+                    <!-- Display user's favorite parks -->
+                </div>
+            </section>
+        
+            <footer>
+                <p>&copy; 2025 Utah National Parks Project</p>
+            </footer>
         </main>
-        <footer>
-        </footer>
+        
+        <script src="js/main.js"></script>
     </body>
 </html>
