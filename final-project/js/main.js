@@ -85,6 +85,7 @@ async function getForecast(lat, lon) {
 function displayParkDetails(parkId) {
     const park = parks.find(p => p.id === parkId);
     const detailsSection = document.getElementById('park-details');
+    detailsSection.classList.toggle('open'); // Toggle the slide effect
     detailsSection.innerHTML = `
         <h3>${park.fullName}</h3>
         <p>${park.description}</p>
@@ -159,25 +160,3 @@ window.onload = () => {
         searchParks(searchInput.value);
     });
 };
-
-function setCopyrightYear() {
-    const currentYear = new Date().getFullYear();
-    const yearSpan = document.getElementById('currentyear');
-    if (yearSpan) {
-        yearSpan.textContent = currentYear;
-    }
-}
-
-function setLastModifiedDate() {
-    const lastModifiedDate = document.lastModified;
-    const secondParagraph = document.querySelector('footer p:nth-of-type(2)');
-    if (secondParagraph) {
-        secondParagraph.textContent = `Last modified: ${lastModifiedDate}`;
-    }
-}
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    setCopyrightYear();
-    setLastModifiedDate();
-});
